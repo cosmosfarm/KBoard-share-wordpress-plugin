@@ -15,9 +15,16 @@ function kboard_share_facebook(v_title, v_url) {
 	var image = encodeURIComponent(facebookImageUrl);
 	var title = encodeURIComponent(snsTitle);
 	var summary = encodeURIComponent(snsSummary);
-	facebookURL = "http://www.facebook.com/sharer.php?s=100&p[url]=" + url
+	
+	if(kboard_isMobile()){
+		facebookURL = "https://www.facebook.com/sharer/sharer.php?u="
+			+ url;
+	}
+	else{
+		facebookURL = "http://www.facebook.com/sharer.php?s=100&p[url]=" + url
 			+ "&p[images][0]=" + image + "&p[title]=" + title + "&p[summary]="
 			+ summary;
+	}
 
 	window.open(facebookURL, "FACEBOOK");
 	return false;
@@ -45,5 +52,15 @@ function kboard_share_google(v_url) {
 	var googleURL = "https://plus.google.com/share?url="
 			+ encodeURIComponent(v_url);
 	window.open(googleURL, "GOOGLE");
+	return false;
+}
+
+function kboard_isMobile(){
+	var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
+	for (var word in mobileKeyWords){
+		if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+			return true;
+		}
+	}
 	return false;
 }

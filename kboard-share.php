@@ -1,21 +1,21 @@
 <?php
 /*
 Plugin Name: KBoard : 소셜 공유
-Plugin URI: http://www.cosmosfarm.com/products/kboard
+Plugin URI: http://www.cosmosfarm.com/wpstore/product/kboard-share
 Description: 워드프레스 KBoard에 소셜 공유 버튼을 추가 합니다.
-Version: 1.0
+Version: 1.1
 Author: Cosmosfarm
 Author URI: http://www.cosmosfarm.com/
 */
 
 if(!defined('ABSPATH')) exit;
 
-define('KBOARD_SHARE_VERSION', '1.0');
+define('KBOARD_SHARE_VERSION', '1.1');
 
 add_action('init', 'kboard_share_init');
 function kboard_share_init(){
 	wp_enqueue_style("kboard-share", plugins_url('/view/style.css', __FILE__));
-	wp_enqueue_script('kboard-share', plugins_url('/view/share.js', __FILE__), array(), '1.0');
+	wp_enqueue_script('kboard-share', plugins_url('/view/share.js', __FILE__), array(), KBOARD_SHARE_VERSION);
 }
 
 add_filter('kboard_content', 'kboard_share_content');
