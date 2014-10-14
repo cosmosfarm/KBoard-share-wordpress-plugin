@@ -8,6 +8,7 @@ http://www.cosmosfarm.com/wpstore/product/kboard-share
 1.2
 ------------------
 공유버튼 텍스트에서 이미지로 교체
+
 버그 수정
 
 1.1
