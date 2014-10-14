@@ -3,7 +3,10 @@ var snsSummary = "";
 var snsUrl = location.href;
 var facebookImageUrl = "";
 
-function kboard_share_facebook(v_title, v_url) {
+function kboard_share_facebook(v_title, v_url){
+	var w = 700;
+	var h = 350;
+	
 	if (!v_title) {
 		v_title = snsTitle;
 	}
@@ -26,11 +29,14 @@ function kboard_share_facebook(v_title, v_url) {
 			+ summary;
 	}
 
-	window.open(facebookURL, "FACEBOOK");
+	window.open(facebookURL, 'FACEBOOK', 'width='+w+',height='+h+',left='+(screen.availWidth-w)*0.5+',top='+(screen.availHeight-h)*0.5);
 	return false;
 }
 
-function kboard_share_twitter(v_title, v_url) {
+function kboard_share_twitter(v_title, v_url){
+	var w = 700;
+	var h = 350;
+	
 	if (!v_title) {
 		v_title = snsTitle + " " + snsSummary;
 	}
@@ -40,18 +46,21 @@ function kboard_share_twitter(v_title, v_url) {
 
 	var twitterURL = "http://twitter.com/home?status="
 			+ encodeURIComponent(v_title + ": " + v_url);
-	window.open(twitterURL, "TWITTER");
+	window.open(twitterURL, 'TWITTER', 'width='+w+',height='+h+',left='+(screen.availWidth-w)*0.5+',top='+(screen.availHeight-h)*0.5);
 	return false;
 }
 
-function kboard_share_google(v_url) {
+function kboard_share_google(v_url){
+	var w = 700;
+	var h = 350;
+	
 	if (!v_url) {
 		v_url = snsUrl;
 	}
 
 	var googleURL = "https://plus.google.com/share?url="
 			+ encodeURIComponent(v_url);
-	window.open(googleURL, "GOOGLE");
+	window.open(googleURL, 'GOOGLE', 'width='+w+',height='+h+',left='+(screen.availWidth-w)*0.5+',top='+(screen.availHeight-h)*0.5);
 	return false;
 }
 

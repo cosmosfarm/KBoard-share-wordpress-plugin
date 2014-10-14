@@ -4,7 +4,4 @@
  */
 
 #kboard-share { padding-top: 50px; width: 100%; text-align: center; }
-#kboard-share button { border: 0; border-radius: 2px; color: #fff; font-size: 12px; font-weight: bold; padding: 6px 10px; text-transform: uppercase; vertical-align: bottom; }
-#kboard-share button.kboard-share-facebook { background-color: #4862a3; }
-#kboard-share button.kboard-share-twitter { background-color: #00acee; }
-#kboard-share button.kboard-share-google { background-color: #dc4a38; }
+#kboard-share span { cursor: pointer; }
